@@ -43,6 +43,8 @@ func _physics_process(delta: float) -> void:
 		if is_on_wall():
 				dashtime.stop()
 				clingtime.start()
+		if is_on_floor():
+			dashtime.stop()
 	if not clingtime.is_stopped():
 		velocity.y=1
 		if Input.is_action_just_pressed("Jump"):

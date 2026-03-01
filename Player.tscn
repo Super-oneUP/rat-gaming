@@ -135,6 +135,7 @@ _data = {
 size = Vector2(11, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=866228032]
+collision_layer = 2
 floor_constant_speed = true
 floor_snap_length = 4.0
 script = ExtResource("1_kpjcp")

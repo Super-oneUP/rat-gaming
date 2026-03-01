@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d0cdd61vykhj0"]
+
+[ext_resource type="Texture2D" uid="uid://c40pypgt6l53" path="res://art/estrogencheese.png" id="1_kw545"]
+[ext_resource type="Script" uid="uid://hdi4tfoba2kv" path="res://cheese.gd" id="1_s0ldm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0ldm"]
+size = Vector2(26, 17)
+
+[node name="cheese" type="Node2D" unique_id=923417286]
+script = ExtResource("1_s0ldm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=703326719]
+texture = ExtResource("1_kw545")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2052370099]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=361134445]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_s0ldm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

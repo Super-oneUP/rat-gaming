@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cn1kgxf70wvyl"]
+
+[ext_resource type="Script" uid="uid://btbf8en40bcda" path="res://timer.gd" id="1_b3bc3"]
+
+[node name="UI" type="Control" unique_id=841704001]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3bc3")
+
+[node name="Ttext" type="Label" parent="." unique_id=183794543]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -11.0
+offset_right = 4.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "its pizza"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1442849491]
+wait_time = 45.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
