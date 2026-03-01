@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://bx4a7uyiurfac"]
+
+[ext_resource type="Script" uid="uid://bn0ymn08qklww" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://dv0lhe4cy101l" path="res://art/rat.png" id="2_kpjcp"]
+
+[sub_resource type="Animation" id="Animation_kne1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_e80uo"]
+resource_name = "dash"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_kpjcp"]
+resource_name = "fall"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_cxr5p"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_tdg3f"]
+resource_name = "jump"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_dtqjt"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_5ncpa"]
+resource_name = "walljump"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ncpa"]
+_data = {
+&"RESET": SubResource("Animation_kne1u"),
+&"dash": SubResource("Animation_e80uo"),
+&"fall": SubResource("Animation_kpjcp"),
+&"idle": SubResource("Animation_cxr5p"),
+&"jump": SubResource("Animation_tdg3f"),
+&"walk": SubResource("Animation_dtqjt"),
+&"walljump": SubResource("Animation_5ncpa")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
+size = Vector2(11, 28)
+
+[node name="Player" type="CharacterBody2D" unique_id=866228032]
+floor_constant_speed = true
+floor_snap_length = 4.0
+script = ExtResource("1_kpjcp")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=807900532]
+texture = ExtResource("2_kpjcp")
+hframes = 3
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=579892812]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5ncpa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=695399810]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_ij6vw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1286993932]
+
+[node name="dashtime" type="Timer" parent="." unique_id=846044472]
+wait_time = 0.4
+one_shot = true
+
+[node name="clingtime" type="Timer" parent="." unique_id=31092398]
+wait_time = 0.5
+one_shot = true
