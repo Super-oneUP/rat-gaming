@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bn0ymn08qklww" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dv0lhe4cy101l" path="res://art/rat.png" id="2_kpjcp"]
+[ext_resource type="AudioStream" uid="uid://smmw1p8eb8np" path="res://music/jump.wav" id="3_kne1u"]
+[ext_resource type="AudioStream" uid="uid://dig1dfewdhef5" path="res://music/click.wav" id="4_cxr5p"]
+[ext_resource type="AudioStream" uid="uid://dkfsksqju7cxd" path="res://music/explosion.wav" id="5_tdg3f"]
 
 [sub_resource type="Animation" id="Animation_kne1u"]
 length = 0.001
@@ -162,3 +165,15 @@ one_shot = true
 [node name="clingtime" type="Timer" parent="." unique_id=31092398]
 wait_time = 0.5
 one_shot = true
+
+[node name="jump" type="AudioStreamPlayer" parent="." unique_id=1386401583]
+stream = ExtResource("3_kne1u")
+volume_db = -5.0
+
+[node name="dash" type="AudioStreamPlayer" parent="." unique_id=12656756]
+stream = ExtResource("4_cxr5p")
+volume_db = -5.0
+
+[node name="cling" type="AudioStreamPlayer" parent="." unique_id=750837404]
+stream = ExtResource("5_tdg3f")
+volume_db = -5.0

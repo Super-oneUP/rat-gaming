@@ -24,6 +24,6 @@ text = "its pizza"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=1442849491]
-wait_time = 45.0
+wait_time = 60.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

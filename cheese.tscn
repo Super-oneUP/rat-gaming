@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c40pypgt6l53" path="res://art/estrogencheese.png" id="1_kw545"]
 [ext_resource type="Script" uid="uid://hdi4tfoba2kv" path="res://cheese.gd" id="1_s0ldm"]
+[ext_resource type="AudioStream" uid="uid://ddkpq1c46ibm3" path="res://music/powerUp.wav" id="3_d3rdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0ldm"]
 size = Vector2(26, 17)
@@ -19,5 +20,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=361134445]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_s0ldm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2074588066]
+stream = ExtResource("3_d3rdx")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

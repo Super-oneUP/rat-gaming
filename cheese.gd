@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not collected:
 		$"../CanvasLayer/UI".starttimer()
+		$AudioStreamPlayer.play()
 		$"../AudioStreamPlayer".stream=load("res://music/OVERTIME_!.mp3")
 		$"../AudioStreamPlayer".volume_db=-10
 		$"../AudioStreamPlayer".play()
