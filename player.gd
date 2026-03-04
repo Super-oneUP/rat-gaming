@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var sprite = $Player
 @onready var dashtime= $dashtime
 @onready var clingtime= $clingtime
+var skin=0
 var facing=1
 var dashed=0
 
@@ -83,3 +84,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if not dashtime.is_stopped():
 		anim.play("dash")
+	if Input.is_action_just_pressed("skin debug"):
+		skin += 1
+		if skin == 1:
+			$Player.texture = preload ("res://art/rat skins/pizza rat.png")
+		if skin > 1:
+			skin = 0
+			$Player.texture = preload ("res://art/rat.png")
