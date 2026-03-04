@@ -9,11 +9,18 @@ extends CharacterBody2D
 @onready var sprite = $Player
 @onready var dashtime= $dashtime
 @onready var clingtime= $clingtime
+@onready var hitbox = $CollisionShape2D
 var skin=0
 var facing=1
 var dashed=0
 
 func _physics_process(delta: float) -> void:
+	if dashtime.is_stopped() and clingtime.is_stopped():
+		hitbox.shape.size.x=12
+		hitbox.position.x=0.0
+	else:
+		hitbox.shape.size.x=22
+		hitbox.position.x=5.0*facing
 	var horizinput := 0.0
 	if dashtime.is_stopped():
 		if clingtime.is_stopped():
@@ -88,6 +95,8 @@ func _physics_process(delta: float) -> void:
 		skin += 1
 		if skin == 1:
 			$Player.texture = preload ("res://art/rat skins/pizza rat.png")
-		if skin > 1:
+		if skin == 2:
+			$Player.texture = preload ("res://art/rat skins/doombringer.png")
+		if skin > 2:
 			skin = 0
 			$Player.texture = preload ("res://art/rat.png")
