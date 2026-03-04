@@ -55,12 +55,14 @@ func _physics_process(delta: float) -> void:
 			velocity.y=-jumpforce*1.3
 			dashed = 0
 			clingtime.stop()
+		if Input.is_action_just_pressed("fall or mine"):
+				clingtime.stop()
 	if is_on_floor():
 		velocity.y=0
 		dashed=0
 		if Input.is_action_just_pressed("Jump"):
 			$jump.play()
-			if Input.is_action_pressed("Run"):
+			if not Input.is_action_pressed("Run"):
 				velocity.y= -(jumpforce+abs(velocity.x)*0.2)
 			else:
 				velocity.y=-jumpforce
