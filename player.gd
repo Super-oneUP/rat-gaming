@@ -97,6 +97,8 @@ func _physics_process(delta: float) -> void:
 			$Player.texture = preload ("res://art/rat skins/pizza rat.png")
 		if skin == 2:
 			$Player.texture = preload ("res://art/rat skins/doombringer.png")
-		if skin > 2:
+		if skin == 3:
+			$Player.texture = preload ("res://art/rat skins/transparent rat.png")
+		if skin > 3:
 			skin = 0
 			$Player.texture = preload ("res://art/rat.png")
