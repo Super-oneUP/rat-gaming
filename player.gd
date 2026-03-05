@@ -10,17 +10,18 @@ extends CharacterBody2D
 @onready var dashtime= $dashtime
 @onready var clingtime= $clingtime
 @onready var hitbox = $CollisionShape2D
+@onready var pickHitbox = $PickaxeHitbox
+@onready var pickArea = $PickaxeHitbox/PickaxeArea
 var skin=0
 var facing=1
 var dashed=0
 
 func _physics_process(delta: float) -> void:
 	if dashtime.is_stopped() and clingtime.is_stopped():
-		hitbox.shape.size.x=12
-		hitbox.position.x=0.0
+		pickHitbox.disabled=true
 	else:
-		hitbox.shape.size.x=22
-		hitbox.position.x=5.0*facing
+		pickHitbox.position.x=8*facing
+		pickHitbox.disabled=false
 	var horizinput := 0.0
 	if dashtime.is_stopped():
 		if clingtime.is_stopped():
@@ -50,7 +51,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x=500
 		else:
 			velocity.x=-500
-		if is_on_wall():
+		if is_on_wall() and pickArea.has_overlapping_bodies():
 				dashtime.stop()
 				clingtime.start()
 				$cling.play()

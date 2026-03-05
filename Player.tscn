@@ -136,6 +136,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
 size = Vector2(12, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxr5p"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdg3f"]
+size = Vector2(18, 4)
+
 [node name="Player" type="CharacterBody2D" unique_id=866228032]
 collision_layer = 2
 floor_constant_speed = true
@@ -154,6 +160,19 @@ libraries/ = SubResource("AnimationLibrary_5ncpa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=695399810]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ij6vw")
+
+[node name="PickaxeHitbox" type="CollisionShape2D" parent="." unique_id=1991033959]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_cxr5p")
+disabled = true
+
+[node name="PickaxeArea" type="Area2D" parent="PickaxeHitbox" unique_id=1230023128]
+position = Vector2(-8, 8)
+collision_layer = 0
+
+[node name="PickaxeHitbox" type="CollisionShape2D" parent="PickaxeHitbox/PickaxeArea" unique_id=1770725570]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_tdg3f")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1286993932]
 
