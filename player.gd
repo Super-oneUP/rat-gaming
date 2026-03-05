@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var runspeed:= 300.0
 @export var jumpforce:= 360.0
 @export var gravity:= 1000.0
+@export var accel:=1000.0
+@export var decel:=2500.0
 @onready var anim = $Player/AnimationPlayer
 @onready var camera = $Camera2D
 @onready var sprite = $Player
@@ -33,10 +35,10 @@ func _physics_process(delta: float) -> void:
 				horizinput -= 1
 				sprite.flip_h = true
 				facing=-1
-		if Input.is_action_pressed("Run"):
-			velocity.x=move_toward(velocity.x,horizinput*runspeed,delta*1000)
-		else:
-			velocity.x=move_toward(velocity.x,horizinput*walkspeed,delta*1000)
+			if facing==sign(velocity.x):
+				velocity.x=move_toward(velocity.x,horizinput*walkspeed,delta*accel)
+			else:
+				velocity.x=move_toward(velocity.x,horizinput*walkspeed,delta*decel)
 	if Input.is_action_just_pressed("Dash"):
 		if not velocity.y==0:
 			if dashed == 0:

@@ -140,7 +140,7 @@ size = Vector2(12, 28)
 size = Vector2(16, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdg3f"]
-size = Vector2(18, 4)
+size = Vector2(20, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=866228032]
 collision_layer = 2
