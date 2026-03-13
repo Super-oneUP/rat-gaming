@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cb15luqjlxro7"]
+
+[ext_resource type="Script" uid="uid://bblr56661dkmq" path="res://title_screen.gd" id="1_v6p8y"]
+
+[node name="title screen" type="Control" unique_id=80713215]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v6p8y")
+
+[node name="Label" type="Label" parent="." unique_id=1430168617]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.80500007
+anchor_bottom = 0.77400005
+offset_top = 53.0
+offset_right = 97.599976
+offset_bottom = -132.98001
+text = "RAT CAVE"
+horizontal_alignment = 1
+
+[node name="start" type="Button" parent="." unique_id=255878838]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 180.0
+offset_right = 154.0
+offset_bottom = 227.0
+text = "start"
+
+[node name="custom" type="Button" parent="." unique_id=1337516146]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 179.0
+offset_right = 417.0
+offset_bottom = 226.0
+text = "customize"
+
+[connection signal="pressed" from="start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="custom" to="." method="_on_custom_pressed"]

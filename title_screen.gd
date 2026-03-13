@@ -1,4 +1,6 @@
-extends Node2D
+extends Control
+
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,9 +12,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_button_pressed() -> void:
+
+func _on_button_pressed():
 	get_tree().change_scene_to_file("res://levels/level.scn")
 
-
-func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://title_screen.tscn")
+func _on_custom_pressed():
+	get_tree().change_scene_to_file("res://customize.tscn")

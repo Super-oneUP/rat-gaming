@@ -174,8 +174,6 @@ collision_layer = 0
 position = Vector2(8, -8)
 shape = SubResource("RectangleShape2D_tdg3f")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1286993932]
-
 [node name="dashtime" type="Timer" parent="." unique_id=846044472]
 wait_time = 0.4
 one_shot = true
@@ -194,3 +192,5 @@ volume_db = -5.0
 [node name="cling" type="AudioStreamPlayer" parent="." unique_id=750837404]
 stream = ExtResource("5_tdg3f")
 volume_db = -5.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2020934055]

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ckj2uh5b2ahte"]
+
+[ext_resource type="Texture2D" uid="uid://cyqckp1ypykct" path="res://art/skin icons/base.png" id="1_bxshm"]
+[ext_resource type="Script" uid="uid://dpdp5jc8aldg1" path="res://customize.gd" id="1_n3ywi"]
+[ext_resource type="Texture2D" uid="uid://cjfue1mmbbtjb" path="res://art/skin icons/female.png" id="2_n3ywi"]
+[ext_resource type="Texture2D" uid="uid://s58vnjcxqir5" path="res://art/skin icons/transparent.png" id="3_8yffk"]
+[ext_resource type="Texture2D" uid="uid://b71xm6iamho48" path="res://art/skin icons/pizza.png" id="4_4qook"]
+[ext_resource type="Texture2D" uid="uid://dkpwdt1cu4un7" path="res://art/skin icons/grace.png" id="5_5wp6w"]
+[ext_resource type="Texture2D" uid="uid://ci3slfjymjhyw" path="res://art/skin icons/bee.png" id="6_2nls6"]
+
+[node name="customize" type="Control" unique_id=1876868862]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n3ywi")
+
+[node name="back" type="Button" parent="." unique_id=9612535]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 178.0
+offset_right = 119.0
+offset_bottom = 224.0
+text = "back"
+
+[node name="base" type="Button" parent="." unique_id=1610623675]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 1.0
+offset_right = 304.0
+offset_bottom = 57.0
+icon = ExtResource("1_bxshm")
+
+[node name="fem" type="Button" parent="." unique_id=1949927002]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.368
+anchor_right = -4.368
+offset_left = 2434.6401
+offset_top = 1.0
+offset_right = 2490.6401
+offset_bottom = 57.0
+icon = ExtResource("2_n3ywi")
+
+[node name="trans" type="Button" parent="." unique_id=685426540]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 73.0
+offset_right = 305.0
+offset_bottom = 129.0
+icon = ExtResource("3_8yffk")
+
+[node name="pizza" type="Button" parent="." unique_id=747311980]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 73.0
+offset_right = 396.0
+offset_bottom = 129.0
+icon = ExtResource("4_4qook")
+
+[node name="bible" type="Button" parent="." unique_id=689144490]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 150.0
+offset_right = 305.0
+offset_bottom = 206.0
+icon = ExtResource("5_5wp6w")
+
+[node name="lead" type="Button" parent="." unique_id=882295617]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 150.0
+offset_right = 395.0
+offset_bottom = 206.0
+icon = ExtResource("6_2nls6")
+
+[node name="Label" type="Label" parent="." unique_id=768896402]
+layout_mode = 0
+offset_left = 233.0
+offset_right = 420.0
+offset_bottom = 270.0
+text = "
+
+     basic           female
+
+
+transparent  big stupid
+
+
+doombringer    bee"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="base" to="." method="_on_base_pressed"]
+[connection signal="pressed" from="fem" to="." method="_on_fem_pressed"]
+[connection signal="pressed" from="trans" to="." method="_on_trans_pressed"]
+[connection signal="pressed" from="pizza" to="." method="_on_pizza_pressed"]
+[connection signal="pressed" from="bible" to="." method="_on_bible_pressed"]
+[connection signal="pressed" from="lead" to="." method="_on_lead_pressed"]

@@ -6,14 +6,25 @@
 [node name="win" type="Node2D" unique_id=1378498697]
 script = ExtResource("1_wao2c")
 
-[node name="Timer" type="Timer" parent="." unique_id=875484755]
-wait_time = 5.0
-autostart = true
+[node name="redo" type="Button" parent="." unique_id=4478848]
+offset_left = 67.0
+offset_top = 213.0
+offset_right = 142.0
+offset_bottom = 243.0
+text = "replay"
+
+[node name="menu" type="Button" parent="." unique_id=286697409]
+offset_left = 333.0
+offset_top = 216.0
+offset_right = 408.0
+offset_bottom = 247.0
+text = "menu"
 
 [node name="wintext" parent="." unique_id=671693136 instance=ExtResource("2_hgi8f")]
-offset_left = 230.0
-offset_top = 104.0
-offset_right = 230.0
-offset_bottom = 104.0
+offset_left = 232.0
+offset_top = 49.0
+offset_right = 232.0
+offset_bottom = 49.0
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="redo" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

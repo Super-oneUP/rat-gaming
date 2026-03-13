@@ -14,11 +14,24 @@ extends CharacterBody2D
 @onready var hitbox = $CollisionShape2D
 @onready var pickHitbox = $PickaxeHitbox
 @onready var pickArea = $PickaxeHitbox/PickaxeArea
-var skin=0
 var facing=1
 var dashed=0
 
+
+
 func _physics_process(delta: float) -> void:
+	if global.skin == 1:
+		$Player.texture = preload ("res://art/rat skins/pizza rat.png")
+	if global.skin == 2:
+			$Player.texture = preload ("res://art/rat skins/doombringer.png")
+	if global.skin == 3:
+			$Player.texture = preload ("res://art/rat skins/transparent rat.png")
+	if global.skin == 4:
+		$Player.texture = preload ("res://art/rat skins/female rat.png")
+	if global.skin == 5:
+		$Player.texture = preload ("res://art/rat skins/bee gorl.png")
+	if global.skin == 0:
+		$Player.texture = preload ("res://art/rat.png")
 	if dashtime.is_stopped() and clingtime.is_stopped():
 		pickHitbox.disabled=true
 	else:
@@ -94,16 +107,3 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if not dashtime.is_stopped():
 		anim.play("dash")
-	if Input.is_action_just_pressed("skin debug"):
-		skin += 1
-		if skin == 1:
-			$Player.texture = preload ("res://art/rat skins/pizza rat.png")
-		if skin == 2:
-			$Player.texture = preload ("res://art/rat skins/doombringer.png")
-		if skin == 3:
-			$Player.texture = preload ("res://art/rat skins/transparent rat.png")
-		if skin == 4:
-			$Player.texture = preload ("res://art/rat skins/female rat.png")
-		if skin > 4:
-			skin = 0
-			$Player.texture = preload ("res://art/rat.png")
