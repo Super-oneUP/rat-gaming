@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://s58vnjcxqir5" path="res://art/skin icons/transparent.png" id="3_8yffk"]
 [ext_resource type="Texture2D" uid="uid://b71xm6iamho48" path="res://art/skin icons/pizza.png" id="4_4qook"]
 [ext_resource type="Texture2D" uid="uid://dkpwdt1cu4un7" path="res://art/skin icons/grace.png" id="5_5wp6w"]
-[ext_resource type="Texture2D" uid="uid://ci3slfjymjhyw" path="res://art/skin icons/bee.png" id="6_2nls6"]
 
 [node name="customize" type="Control" unique_id=1876868862]
 layout_mode = 3
@@ -32,6 +31,7 @@ offset_top = 1.0
 offset_right = 304.0
 offset_bottom = 57.0
 icon = ExtResource("1_bxshm")
+flat = true
 
 [node name="fem" type="Button" parent="." unique_id=1949927002]
 layout_mode = 1
@@ -43,6 +43,7 @@ offset_top = 1.0
 offset_right = 2490.6401
 offset_bottom = 57.0
 icon = ExtResource("2_n3ywi")
+flat = true
 
 [node name="trans" type="Button" parent="." unique_id=685426540]
 layout_mode = 0
@@ -51,6 +52,7 @@ offset_top = 73.0
 offset_right = 305.0
 offset_bottom = 129.0
 icon = ExtResource("3_8yffk")
+flat = true
 
 [node name="pizza" type="Button" parent="." unique_id=747311980]
 layout_mode = 0
@@ -59,28 +61,23 @@ offset_top = 73.0
 offset_right = 396.0
 offset_bottom = 129.0
 icon = ExtResource("4_4qook")
+flat = true
 
 [node name="bible" type="Button" parent="." unique_id=689144490]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 150.0
-offset_right = 305.0
-offset_bottom = 206.0
+offset_left = 292.0
+offset_top = 148.0
+offset_right = 348.0
+offset_bottom = 204.0
 icon = ExtResource("5_5wp6w")
-
-[node name="lead" type="Button" parent="." unique_id=882295617]
-layout_mode = 0
-offset_left = 339.0
-offset_top = 150.0
-offset_right = 395.0
-offset_bottom = 206.0
-icon = ExtResource("6_2nls6")
+flat = true
 
 [node name="Label" type="Label" parent="." unique_id=768896402]
 layout_mode = 0
 offset_left = 233.0
+offset_top = -6.0
 offset_right = 420.0
-offset_bottom = 270.0
+offset_bottom = 264.0
 text = "
 
      basic           female
@@ -89,7 +86,17 @@ text = "
 transparent  big stupid
 
 
-doombringer    bee"
+        doombringer"
+
+[node name="Label2" type="Label" parent="." unique_id=64683114]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 198.0
+offset_bottom = 75.0
+text = "skins that MIGHT become
+unlockable eventually but
+for now they are free :D"
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="base" to="." method="_on_base_pressed"]
@@ -97,4 +104,3 @@ doombringer    bee"
 [connection signal="pressed" from="trans" to="." method="_on_trans_pressed"]
 [connection signal="pressed" from="pizza" to="." method="_on_pizza_pressed"]
 [connection signal="pressed" from="bible" to="." method="_on_bible_pressed"]
-[connection signal="pressed" from="lead" to="." method="_on_lead_pressed"]

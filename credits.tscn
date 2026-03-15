@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ds2pqy46kmrbx"]
+
+[ext_resource type="Script" uid="uid://hy6ykf4o0hsa" path="res://credits.gd" id="1_nm7lk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5rx0"]
+font_size = 12
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nm7lk"]
+load_path = "res://.godot/imported/bee.png-a5559b4b9fe4a80407e73008c8d68b7d.ctex"
+
+[node name="credits" type="Control" unique_id=594458025]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nm7lk")
+
+[node name="Label" type="Label" parent="." unique_id=1609228848]
+layout_mode = 0
+offset_right = 481.0
+offset_bottom = 267.0
+text = "
+awesome quality credits"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1698979180]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 144.0
+offset_right = 466.0
+offset_bottom = 221.0
+text = "Blitz
+\"ah rats\"
+music thats hopefully
+in this build"
+label_settings = SubResource("LabelSettings_t5rx0")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1257553629]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 146.0
+offset_right = 333.0
+offset_bottom = 263.0
+text = "taelsdafoox
+\"rate mode\"
+teaching me how to code
+better coding fancier art 
+extra concepts smoother
+wall cling"
+label_settings = SubResource("LabelSettings_t5rx0")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1375244599]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 146.0
+offset_right = 167.0
+offset_bottom = 203.0
+text = "Super-1UP
+\"i like estrogen\"
+coding art level and concept"
+label_settings = SubResource("LabelSettings_t5rx0")
+horizontal_alignment = 1
+
+[node name="leave" type="Button" parent="." unique_id=267649634]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 58.0
+offset_bottom = 40.0
+text = "leave"
+
+[node name="B" type="Button" parent="." unique_id=1914131123]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 92.0
+offset_right = 113.0
+offset_bottom = 148.0
+icon = SubResource("CompressedTexture2D_nm7lk")
+flat = true
+
+[connection signal="pressed" from="leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="B" to="." method="_on_b_pressed"]

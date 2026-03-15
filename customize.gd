@@ -32,7 +32,3 @@ func _on_pizza_pressed() -> void:
 
 func _on_bible_pressed() -> void:
 	global.skin=2
-
-
-func _on_lead_pressed() -> void:
-	global.skin=5
